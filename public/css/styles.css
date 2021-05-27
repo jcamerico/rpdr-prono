@@ -11,15 +11,12 @@ header {
     background-color: #99154e;
 }
 
-.nav-link:hover {
-    color: #99154e;
+.nav-link {
+    color: #fff;
 }
 
-.not-available {
-    color: currentColor;
-    cursor: not-allowed;
-    opacity: 0.5;
-    text-decoration: none;
+.nav-link:hover {
+    color: #99154e;
 }
 
 /*

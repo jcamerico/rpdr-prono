@@ -1,0 +1,31 @@
+<%- include('partials/header') %> 
+
+    <section class="title">
+        <h1>RuPaul's Drag Race All Stars 6: Le prono</h1>
+    </section>
+
+    <section class="first-section">
+        <div class="container">
+            <h2 id="results">Resultats</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td>Prénom</td>
+                        <td>Points</td>
+                        <td>Réponses correctes</td>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <% for( let index = 0; index < scores.length; index++ ) { %>
+                        <tr>
+                            <td><%= scores[index].name %></td>
+                            <td><%= scores[index].score %></td>
+                            <td><%= scores[index].rightAnswers %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+<%- include('partials/footer') %>
