@@ -1,0 +1,90 @@
+
+/*
+Header
+*/
+
+header {
+    background-color: #ffbbcc;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {    
+    background-color: #99154e;
+}
+
+.nav-link:hover {
+    color: #99154e;
+}
+
+.not-available {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+/*
+Submit form
+*/
+
+.title {
+    background-image: url('../img/AS6Banner.jpeg');
+    background-size: cover;
+    min-height: 800px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    text-align: center;
+    color: #99154e;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
+}
+
+section {
+    padding-top: 3%;
+    padding-bottom: 1%;
+}
+
+.first-section {
+    background-color: #ffc93c;
+}
+
+.second-section {
+    background-color: #ffddcc;
+}
+
+.third-section {
+    background-color: #ffddcc;
+}
+
+.submit-section {
+    background-color: #ffddcc;
+}
+
+.submit-button {
+    max-width: 500px;
+}
+
+/*
+Thanks page
+*/
+.thanks {
+    background-color: #ffc93c;
+    padding-top: 5%;
+    padding-bottom: 5%;
+} 
+
+
+/*
+Footer
+*/
+
+footer {
+    background-color: #ffbbcc;
+    color: #99154e;
+}
