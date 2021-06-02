@@ -1,11 +1,28 @@
-
 /*
-Header
+Element styles
 */
 
-header {
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
     background-color: #ffbbcc;
 }
+
+h1 {
+    font-size: 4vw;
+    font-weight: 300;
+    text-align: center;
+    color: #99154e;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+img {
+    width: 100vw;
+}
+
+/*
+Header classes
+*/
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {    
     background-color: #99154e;
@@ -19,30 +36,20 @@ header {
     color: #99154e;
 }
 
+.title {
+    padding-top: 2%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
 /*
-Submit form
+Submit form classes
 */
 
-.title {
-    background-image: url('../img/AS6Banner.jpeg');
-    background-size: cover;
-    min-height: 800px;
-}
-
-h1 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    text-align: center;
-    color: #99154e;
-    font-family: 'Montserrat Alternates', sans-serif;
-}
-
-body {
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-weight: 400;
-}
-
-section {
+.form-section {
     padding-top: 3%;
     padding-bottom: 1%;
 }
@@ -72,16 +79,12 @@ Thanks page
 */
 .thanks {
     background-color: #ffc93c;
-    padding-top: 5%;
-    padding-bottom: 5%;
 } 
-
 
 /*
 Footer
 */
 
 footer {
-    background-color: #ffbbcc;
     color: #99154e;
 }
