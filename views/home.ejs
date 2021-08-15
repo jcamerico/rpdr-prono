@@ -1,6 +1,6 @@
 <%- include('partials/header') %> 
 
-    <form action="/" method="POST" id="form">
+    <form action="/" method="POST" id="main">
         <section class="first-section form-section">
             <div class="container">
                 <div class="row">
@@ -12,113 +12,43 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h2>Filler queens <i class="fas fa-star-half-alt"></i></h2>
+
+                        <% for( let componentIndex = 0; componentIndex < queens.length - 4; componentIndex++ ) { %>
                         <div class="mb-3">
-                            <label for="place13" class="form-label">13e place <span class="text-muted">(1 point)</span></label>
-                            <select name="place13" id="place13" class="form-select" required>
+                            <label for="place <%= queens.length - componentIndex %>" class="form-label"> <%=(queens.length - componentIndex)%>e place <span class="text-muted">(<%= Math.pow(2, componentIndex) %> points)</span></label>
+                            <select name="places[]" id="<%= 'place' + (queens.length - componentIndex) %>" class="form-select" required>
                                 <option value="">Choisissez...</option>
                                 <% for( let index = 0; index < queens.length; index++ ) { %>
                                     <option><%= queens[index] %></option>    
                                 <% } %>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="place12" class="form-label">12e place <span class="text-muted">(2 points)</span></label>
-                            <select name="place12" id="place12" class="form-select" required>
-                                <option value="">Choisissez...</option>
-                                <% for( let index = 0; index < queens.length; index++ ) { %>
-                                    <option><%= queens[index] %></option>    
-                                <% } %>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="place11" class="form-label">11e place <span class="text-muted">(4 points)</span></label>
-                            <select name="place11" id="place11" class="form-select" required>
-                                <option value="">Choisissez...</option>
-                                <% for( let index = 0; index < queens.length; index++ ) { %>
-                                    <option><%= queens[index] %></option>    
-                                <% } %>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="place10" class="form-label">10e place <span class="text-muted">(8 points)</span></label>
-                            <select name="place10" id="place10" class="form-select" required>
-                                <option value="">Choisissez...</option>
-                                <% for( let index = 0; index < queens.length; index++ ) { %>
-                                    <option><%= queens[index] %></option>    
-                                <% } %>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="place9" class="form-label">9e place <span class="text-muted">(16 points)</span></label>
-                            <select name="place9" id="place9" class="form-select" required>
-                                <option value="">Choisissez...</option>
-                                <% for( let index = 0; index < queens.length; index++ ) { %>
-                                    <option><%= queens[index] %></option>    
-                                <% } %>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="place8" class="form-label">8e place <span class="text-muted">(32 points)</span></label>
-                            <select name="place8" id="place8" class="form-select" required>
-                                <option value="">Choisissez...</option>
-                                <% for( let index = 0; index < queens.length; index++ ) { %>
-                                    <option><%= queens[index] %></option>    
-                                <% } %>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="place7" class="form-label">7e place <span class="text-muted">(64 points)</span></label>
-                            <select name="place7" id="place7" class="form-select" required>
-                                <option value="">Choisissez...</option>
-                                <% for( let index = 0; index < queens.length; index++ ) { %>
-                                    <option><%= queens[index] %></option>    
-                                <% } %>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="place6" class="form-label">6e place <span class="text-muted">(128 points)</span></label>
-                            <select name="place6" id="place6" class="form-select" required>
-                                <option value="">Choisissez...</option>
-                                <% for( let index = 0; index < queens.length; index++ ) { %>
-                                    <option><%= queens[index] %></option>    
-                                <% } %>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <div class="col">
-                                <label for="place5" class="form-label">5e place <span class="text-muted">(256 points)</span></label>
-                                <select name="place5" id="place5" class="form-select" required>
-                                    <option value="">Choisissez...</option>
-                                    <% for( let index = 0; index < queens.length; index++ ) { %>
-                                        <option><%= queens[index] %></option>    
-                                    <% } %>
-                                </select>
-                            </div>
-                        </div>
+                        <% } %>
+
                     </div>
                     <div class="col-lg-6">
                         <h2>Lip Sync Assassins <i class="fas fa-skull-crossbones"></i></h2>
-                        <p class="text-muted">256 points chaque réponse correcte</p>
+                        <p class="text-muted"><%= bonusScore %> points chaque réponse correcte</p>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="lipsync1" name="lipsync1" placeholder="Lip Sync Assassin 1">
+                            <input type="text" class="form-control" name="lipsyncs[]" placeholder="Lip Sync Assassin #1">
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="lipsync2" name="lipsync2" placeholder="Lip Sync Assassin 2">
+                            <input type="text" class="form-control" name="lipsyncs[]" placeholder="Lip Sync Assassin #2">
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="lipsync3" name="lipsync3" placeholder="Lip Sync Assassin 3">
+                            <input type="text" class="form-control" name="lipsyncs[]" placeholder="Lip Sync Assassin #3">
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="lipsync4" name="lipsync4" placeholder="Lip Sync Assassin 4">
+                            <input type="text" class="form-control" name="lipsyncs[]" placeholder="Lip Sync Assassin #4">
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="lipsync5" name="lipsync5" placeholder="Lip Sync Assassin 5">
+                            <input type="text" class="form-control" name="lipsyncs[]" placeholder="Lip Sync Assassin #5">
                         </div>
                         <h2>Extra points <i class="fas fa-plus"></i></h2>
-                        <p class="text-muted">256 points par réponse correcte</p>
+                        <p class="text-muted"><%= bonusScore %> points par réponse correcte</p>
                         <div class="mb-3">
                             <label for="snatch" class="form-label">Vainqueur Snatch Game <span class="text-muted"></span></label>
-                            <select name="snatch" id="snatch" class="form-select">
+                            <select name="challenges['Snatch Game']" id="snatch" class="form-select">
                                 <option value="">Choisissez...</option>
                                 <% for( let index = 0; index < queens.length; index++ ) { %>
                                     <option><%= queens[index] %></option>    
@@ -127,7 +57,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="talent" class="form-label">Vainqueur Talent show <span class="text-muted"></span></label>
-                            <select name="talent" id="talent" class="form-select">
+                            <select name="challenges['Talent Show']" id="talent" class="form-select">
                                 <option value="">Choisissez...</option>
                                 <% for( let index = 0; index < queens.length; index++ ) { %>
                                     <option><%= queens[index] %></option>    
@@ -136,7 +66,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="reading" class="form-label">Vainqueur Reading challenge <span class="text-muted"></span></label>
-                            <select name="reading" id="reading" class="form-select">
+                            <select name="challenges['Reading Challenge']" id="reading" class="form-select">
                                 <option value="">Choisissez...</option>
                                 <% for( let index = 0; index < queens.length; index++ ) { %>
                                     <option><%= queens[index] %></option>    
@@ -145,7 +75,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="bitchfest" class="form-label">Vainqueur Bitch fest <span class="text-muted"></span></label>
-                            <select name="bitchfest" id="bitchfest" class="form-select">
+                            <select name="challenges['Bitch Fest']" id="bitchfest" class="form-select">
                                 <option value="">Choisissez...</option>
                                 <% for( let index = 0; index < queens.length; index++ ) { %>
                                     <option><%= queens[index] %></option>    
@@ -154,7 +84,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="topallstar" class="form-label">Top all star <span class="text-muted">(celle qui a été le top all star le plus)</span></label>
-                            <select name="topallstar" id="topallstar" class="form-select">
+                            <select name="challenges['Top All Star']" id="topallstar" class="form-select">
                                 <option value="">Choisissez...</option>
                                 <% for( let index = 0; index < queens.length; index++ ) { %>
                                     <option><%= queens[index] %></option>    
@@ -169,34 +99,20 @@
             <div class="container">
                 <div class="row text-center justify-content-center">
                     <h2>Top 4 <i class="fas fa-star"></i></h2>
-                    <p class="text-muted">256 points supplémentaires par queen</p>
+                    <p class="text-muted"><%= bonusScore %> points supplémentaires par queen</p>
+                    
+                    <% for( let componentIndex = queens.length - 4; componentIndex < queens.length - 1; componentIndex++ ) { %>
                     <div class="mb-3">
-                        <label for="place4" class="form-label">4e place <span class="text-muted">(512 points)</span></label>
-                        <select name="place4" id="place4" class="form-select" required>
+                        <label for="place<%= queens.length - componentIndex %>" class="form-label"><%=(queens.length - componentIndex) + 'e place'%> <span class="text-muted">(<%= Math.pow(2, componentIndex) %> points)</span></label>
+                        <select name="places[]" id="place<%= queens.length - componentIndex %>" class="form-select" required>
                             <option value="">Choisissez...</option>
                             <% for( let index = 0; index < queens.length; index++ ) { %>
                                 <option><%= queens[index] %></option>    
                             <% } %>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="place3" class="form-label">3e place <span class="text-muted">(1024 points)</span></label>
-                        <select name="place3" id="place3" class="form-select" required>
-                            <option value="">Choisissez...</option>
-                            <% for( let index = 0; index < queens.length; index++ ) { %>
-                                <option><%= queens[index] %></option>    
-                            <% } %>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="place2" class="form-label">2e place <span class="text-muted">(2048 points)</span></label>
-                        <select name="place2" id="place2" class="form-select" required>
-                            <option value="">Choisissez...</option>
-                            <% for( let index = 0; index < queens.length; index++ ) { %>
-                                <option><%= queens[index] %></option>    
-                            <% } %>
-                        </select>
-                    </div>
+                    <% } %>
+
                 </div>
             </div>
         </section>
@@ -205,8 +121,8 @@
                 <div class="row text-center justify-content-center">
                     <h2>She's a winner, babe! <i class="fas fa-crown"></i></h2>
                     <div class="mb-3">
-                        <label for="winner" class="form-label">And the winner of RuPaul's Drag Race All Stars 6 is... <span class="text-muted">(4096 points)</span></label>
-                        <select name="winner" id="winner" class="form-select" required>
+                        <label for="winner" class="form-label">And the winner of RuPaul's Drag Race All Stars 6 is... <span class="text-muted">(<%= Math.pow(2, queens.length - 1) %> points)</span></label>
+                        <select name="places[]" id="winner" class="form-select" required>
                             <option value="">Choisissez...</option>
                             <% for( let index = 0; index < queens.length; index++ ) { %>
                                 <option><%= queens[index] %></option>    
