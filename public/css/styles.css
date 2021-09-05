@@ -75,6 +75,23 @@ Submit form classes
 }
 
 /*
+Results page
+*/
+.correct {
+    color: #99154e;
+    font-weight: 700;
+}
+
+.incorrect {
+    color: #000;
+    text-decoration: line-through;
+}
+
+.unknown {
+    color: #000;
+}
+
+/*
 Thanks page
 */
 .thanks {
