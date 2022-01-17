@@ -1,4 +1,4 @@
-const BONUS_SCORE = 256;
+const BONUS_SCORE = 32;
 
 function computeScores(result, forecasts) {
     const scores = [];

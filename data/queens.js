@@ -1,17 +1,13 @@
 const queens = [
-    'Akeria Davenport', 
-    "Eureka O'Hara",
-    'Ginger Minj',
-    'Jan',
-    'Jiggly Caliente',
-    'Pandora Boxx',
-    "Rajah O'Hara",
-    'Scarlet Envy',
-    'Serena Chacha',
-    'Silky Ganache',
-    'Sonique',
-    'Trinity K Bonet',
-    'Yara Sofia'
+    'Baga Chipz',
+    'Blu Hydrangea', 
+    'Cheryl Hole',
+    'Janey Jacké',
+    'Jimbo',
+    'Jujubee',
+    'Lemon',
+    'Monique Heart',
+    'Pangina Heals'
 ];
 
 module.exports = queens;
