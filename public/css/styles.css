@@ -5,14 +5,15 @@ Element styles
 body {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
-    background-color: #ffbbcc;
+    background-color: #000D6B;
+    color: #99DDCC;
 }
 
 h1 {
     font-size: 4vw;
     font-weight: 300;
     text-align: center;
-    color: #99154e;
+    color: #99DDCC;
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -25,7 +26,7 @@ Header classes
 */
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {    
-    background-color: #99154e;
+    background-color: #9C19E0;
 }
 
 .nav-link {
@@ -33,7 +34,7 @@ Header classes
 }
 
 .nav-link:hover {
-    color: #99154e;
+    color: #FF5DA2;
 }
 
 .title {
@@ -55,47 +56,59 @@ Submit form classes
 }
 
 .first-section {
-    background-color: #ffc93c;
+    background-color: #000D6B;
+    color:#99DDCC
 }
 
 .second-section {
-    background-color: #ffddcc;
+    background-color: #9C19E0;
+    color: #000D6B;
 }
 
 .third-section {
-    background-color: #ffddcc;
+    background-color: #99DDCC;
+    color: #000D6B;
 }
 
 .submit-section {
-    background-color: #ffddcc;
+    background-color: #99DDCC;
 }
 
 .submit-button {
     max-width: 500px;
 }
 
+.sub-text {
+    color:#fff
+}
+
 /*
 Results page
 */
+
+.results {
+    color: #99DDCC;
+}
+
 .correct {
-    color: #99154e;
+    color: #FF5DA2;
     font-weight: 700;
 }
 
 .incorrect {
-    color: #000;
+    color: #fff;
     text-decoration: line-through;
 }
 
 .unknown {
-    color: #000;
+    color: #fff;
 }
 
 /*
 Thanks page
 */
 .thanks {
-    background-color: #ffc93c;
+    background-color: #5800FF;
 } 
 
 /*
@@ -103,5 +116,5 @@ Footer
 */
 
 footer {
-    color: #99154e;
+    color: #fff;
 }
