@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd server
-npm start&
+nohup npm start &
 cd ../client
 npm start
 
