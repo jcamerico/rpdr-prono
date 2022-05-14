@@ -1,7 +1,5 @@
 build:
   docker:
-    web: src/client/Dockerfile
-    worker: src/server/Dockerfile
+    web: Dockerfile.heroku
 run:
-  web: npm start
-  worker: npm start
+  web: start.sh
