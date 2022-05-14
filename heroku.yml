@@ -2,3 +2,6 @@ build:
   docker:
     web: src/client/Dockerfile
     worker: src/server/Dockerfile
+run:
+  web: npm start
+  worker: npm start
