@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Challenge from "./Challenge";
 import Position from "./Position";
 import { v4 as uuidv4 } from "uuid";
-import backendUrl from "../../backend";
 
 
 function Form(props) {
@@ -74,7 +73,7 @@ function Form(props) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(inputs)
             };
-            fetch(backendUrl() + '/forecast', requestOptions)
+            fetch('/forecast', requestOptions)
                 .then(
                     () => navigate('/thanks'),
                     error => console.log(error)

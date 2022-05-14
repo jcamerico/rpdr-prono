@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import backendUrl from "../../backend";
 import Score from "./Score";
 
 function Results() {
@@ -7,7 +6,7 @@ function Results() {
     const [scores, setScores] = useState([]);
 
     useEffect(() => {
-        fetch(backendUrl() + '/results').
+        fetch('/results').
         then(res => res.json()).
         then(
             (data) => {

@@ -3,10 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
+const path = __dirname + '/views/';
 
 const app = express();
+app.use(express.static(path));
+
 const User = require('./models/user');
 const cors = require('cors');
+
 
 const forecast = require('./routes/forecast');
 const results = require('./routes/results');
@@ -38,8 +42,11 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/queens', queens);
 app.use('/forecast', forecast);
 app.use('/results', results);
+app.get('/', function (req, res) {
+    res.sendFile(path + "index.html");
+  });
 
-const port = process.env.BACKEND_PORT || 3002;    
+const port = process.env.PORT || 3002;    
 app.listen(port, function() {
     console.log('Server started on port ' + port);
 });

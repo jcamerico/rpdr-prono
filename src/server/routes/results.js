@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
                     console.log(forecastError);
                 } else {
                     const allQueens = await fetchQueens();  
-                    const bonusScore = Math.pow(2, allQueens.length);
+                    const bonusScore = Math.pow(2, allQueens.length - 3);
                     const allScores = scores(result, forecasts, bonusScore);                    
                     res.status(200).send(allScores);
                 }

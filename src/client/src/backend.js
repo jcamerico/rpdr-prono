@@ -1,6 +1,6 @@
 
 function backendUrl() {
-    return process.env.BACKEND_URL || 'http://localhost:3002';
+    return process.env.BACKEND_URL;
 }
 
 export default backendUrl;
