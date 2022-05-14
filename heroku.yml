@@ -1,4 +1,4 @@
 build:
   docker:
-    front: src/client/Dockerfile
-    back: src/server/Dockerfile
+    web: src/client/Dockerfile
+    worker: src/server/Dockerfile
