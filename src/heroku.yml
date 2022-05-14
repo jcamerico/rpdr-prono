@@ -1,0 +1,4 @@
+build:
+  docker:
+    front: src/client/Dockerfile
+    back: src/server/Dockerfile
