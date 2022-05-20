@@ -130,7 +130,7 @@ function Form(props) {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <button className="w-100 btn btn-dark btn-lg">Let the best queen win!</button>
+                        <button className="w-100 btn btn-dark btn-lg" disabled>Let the best queen win!</button>
                     </div>
                 </div>
             </div>
