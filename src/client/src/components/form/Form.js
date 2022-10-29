@@ -102,9 +102,8 @@ function Form(props) {
                         <Challenge id='Talent Show' name='Talent Show' queens={props.queens} value={inputs.challenges['Talent Show']} onChange={handleChallengeChange}/>
                         <Challenge id='Reading' name='Reading Challenge' queens={props.queens} value={inputs.challenges['Reading']} onChange={handleChallengeChange}/>
                         <Challenge id='Ball' name='Ball Challenge' queens={props.queens} value={inputs.challenges['Ball']} onChange={handleChallengeChange}/>
-                        <Challenge id='Roast' name='Roast Challenge' queens={props.queens} value={inputs.challenges['Roast']} onChange={handleChallengeChange}/>
-                        <Challenge id='Girl Group' name='Girl Group Challenge' queens={props.queens} value={inputs.challenges['Girl Group']} onChange={handleChallengeChange}/>
-                        <Challenge id='Top All Star' name='Top All Star' queens={props.queens} value={inputs.challenges['Top All Star']} onChange={handleChallengeChange}/>
+                        <Challenge id='Rumix' name='The Rumix' queens={props.queens} value={inputs.challenges['Rumix']} onChange={handleChallengeChange}/>
+                        <Challenge id='Rusical' name='The Rusical' queens={props.queens} value={inputs.challenges['Rusical']} onChange={handleChallengeChange}/>
                     </div>
                 </div>
             </div>
