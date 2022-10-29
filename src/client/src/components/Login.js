@@ -14,7 +14,7 @@ function Login() {
                     <input type="password" className="form-control" name="password" placeholder="Ton mot de passe" required />
                 </div>
                 <br />
-                <button className="w-100 btn btn-primary btn-lg">Login</button>
+                <button className="w-100 btn btn-dark btn-lg">Login</button>
             </div>
         </div>
     </div>;

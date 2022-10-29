@@ -14,7 +14,7 @@ function Register() {
                     <input type="password" className="form-control" name="password" placeholder="Un mot de passe bien puissant" required />
                 </div>
                 <br />
-                <button type="submit" className="w-100 btn btn-primary btn-lg">Register</button>
+                <button type="submit" className="w-100 btn btn-dark btn-lg">Register</button>
             </form>
         </div>
     </div>;

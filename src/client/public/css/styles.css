@@ -5,15 +5,15 @@ Element styles
 body {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
-    background-color: #F4F4F2;
-    color: #495464;
+    background-color: #9C2C77;
+    color: #FD841F;
 }
 
 h1 {
     font-size: 4vw;
     font-weight: 300;
     text-align: center;
-    color: #495464;
+    color: #FD841F;
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -26,15 +26,19 @@ Header classes
 */
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {    
-    background-color: #E8E8E8;
+    background-color: #E14D2A;
 }
 
 .nav-link {
-    color: #BBBFCA;
+    color: #FD841F;
 }
 
 .nav-link:hover {
-    color: #E8E8E8;
+    color: #E14D2A;
+}
+
+.header-title {
+    color: #FD841F;
 }
 
 .title {
@@ -56,20 +60,22 @@ Submit form classes
 }
 
 .first-section {
-    background-color: #495464;
-    color: #F4F4F2;
+    background-color: #CD104D;
+    color: #FD841F;
 }
 
 .second-section {
-    background-color: #E8E8E8;
+    background-color: #E14D2A;
+    color: #9C2C77;
 }
 
 .third-section {
-    background-color: #F4F4F2;
+    background-color: #FD841F;
+    color: #9C2C77;
 }
 
 .submit-section {
-    background-color: #F4F4F2;
+    background-color: #FD841F;
 }
 
 .submit-button {
@@ -102,7 +108,7 @@ Results page
 Thanks page
 */
 .thanks {
-    background-color: #F4F4F2;
+    background-color: #9C2C77;
 } 
 
 /*
@@ -110,5 +116,5 @@ Footer
 */
 
 footer {
-    color: #495464;
+    color: #FD841F;
 }
