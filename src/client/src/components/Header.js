@@ -9,7 +9,7 @@ function Header(props) {
             <div className="px-3 py-2 text-white">
                 <div className="container">
                     <nav className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <h5 className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-muted text-decoration-none">RuPaul's Drag Race Forecast</h5>
+                        <h5 className="d-flex align-items-center header-title my-2 my-lg-0 me-lg-auto text-decoration-none">RuPaul's Drag Race Forecast</h5>
                         <NavLink to="/" className="nav-link">Home</NavLink>
                         <NavLink to="/results" className="nav-link">Results</NavLink>
                     </nav>
