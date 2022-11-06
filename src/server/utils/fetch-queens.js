@@ -8,6 +8,7 @@ function fetchQueens() {
                 resolve([]);
             } else {                
                 const names = queens.map(q => q.name);
+                names.sort();
                 resolve(names);
             }
         });

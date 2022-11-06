@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Challenge from "./Challenge";
 import Position from "./Position";
 import { v4 as uuidv4 } from "uuid";
+import errorHandler from "../../errorHandler";
 
 
 function Form(props) {
@@ -73,10 +74,9 @@ function Form(props) {
                 body: JSON.stringify(inputs)
             };
             fetch('/forecast', requestOptions)
-                .then(
-                    () => navigate('/thanks'),
-                    error => console.log(error)
-                );
+                .then(errorHandler)
+                .then(() => navigate('/thanks'))
+                .catch(() => navigate('/sashay'));
         }    
     }
 
