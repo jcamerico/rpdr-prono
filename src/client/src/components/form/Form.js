@@ -15,9 +15,8 @@ function Form(props) {
         'Talent Show' : '',
         'Reading': '',
         'Ball':  '',
-        'Roast':  '',
-        'Girl Group':  '',
-        'Top All Star': ''
+        'Rumix':  '',
+        'Rusical':  '',
     }
 
     const [inputs, setInputs] = useState({
