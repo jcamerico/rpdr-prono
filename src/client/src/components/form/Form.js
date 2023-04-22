@@ -4,7 +4,7 @@ import Challenge from "./Challenge";
 import Position from "./Position";
 import { v4 as uuidv4 } from "uuid";
 import errorHandler from "../../errorHandler";
-
+import backendUrl from "../../backend";
 
 function Form(props) {
 
@@ -73,7 +73,7 @@ function Form(props) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(inputs)
             };
-            fetch('/forecast', requestOptions)
+            fetch(backendUrl() + '/api/forecast', requestOptions)
                 .then(errorHandler)
                 .then(() => navigate('/thanks'))
                 .catch(() => navigate('/sashay'));

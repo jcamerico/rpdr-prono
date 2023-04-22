@@ -5,15 +5,15 @@ Element styles
 body {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
-    background-color: #9C2C77;
-    color: #FD841F;
+    background-color: #180A0A;
+    color: #F582A7;
 }
 
 h1 {
     font-size: 4vw;
     font-weight: 300;
     text-align: center;
-    color: #FD841F;
+    color: #F582A7;
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -26,19 +26,19 @@ Header classes
 */
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {    
-    background-color: #E14D2A;
+    background-color: #F10086;
 }
 
 .nav-link {
-    color: #FD841F;
+    color: #F582A7;
 }
 
 .nav-link:hover {
-    color: #E14D2A;
+    color: #F10086;
 }
 
 .header-title {
-    color: #FD841F;
+    color: #F582A7;
 }
 
 .title {
@@ -60,22 +60,22 @@ Submit form classes
 }
 
 .first-section {
-    background-color: #CD104D;
-    color: #FD841F;
+    background-color: #180A0A;
+    color: #F582A7;
 }
 
 .second-section {
-    background-color: #E14D2A;
-    color: #9C2C77;
+    background-color: #711A75;
+    color: #F582A7;
 }
 
 .third-section {
-    background-color: #FD841F;
-    color: #9C2C77;
+    background-color: #F10086;
+    color: #180A0A;
 }
 
 .submit-section {
-    background-color: #FD841F;
+    background-color: #F10086;
 }
 
 .submit-button {
@@ -91,24 +91,24 @@ Results page
 */
 
 .correct {
-    color: #F4F4F2;
+    color: #F582A7;
     font-weight: 700;
 }
 
 .incorrect {
-    color: #F4F4F2;
+    color: #F10086;
     text-decoration: line-through;
 }
 
 .unknown {
-    color: #F4F4F2;
+    color: #180A0A;
 }
 
 /*
 Thanks page
 */
 .thanks {
-    background-color: #9C2C77;
+    background-color: #711A75;
 } 
 
 /*
@@ -116,5 +116,5 @@ Footer
 */
 
 footer {
-    color: #FD841F;
+    color: #F582A7;
 }
