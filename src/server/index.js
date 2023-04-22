@@ -39,9 +39,9 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use('/queens', queens);
-app.use('/forecast', forecast);
-app.use('/results', results);
+app.use('/api/queens', queens);
+app.use('/api/forecast', forecast);
+app.use('/api/results', results);
 app.get('/', function (req, res) {
     res.sendFile(path + "index.html");
   });

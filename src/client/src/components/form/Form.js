@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Challenge from "./Challenge";
 import Position from "./Position";
 import { v4 as uuidv4 } from "uuid";
 import errorHandler from "../../errorHandler";
-
+import backendUrl from "../../backend";
+import LipsyncAssassin from "./LipsyncAssassin";
+import Name from "./Name";
 
 function Form(props) {
 
     const initialPlaces = [];
     [...Array(props.queens.length)].forEach((x, i) => initialPlaces[i]='');
+
+    const initialLipsyncAssassins = [];
+    [...Array(5)].forEach((x, i) => initialLipsyncAssassins[i]='');
 
     const initialChallenges = {
         'Snatch Game' : '',
@@ -18,54 +23,25 @@ function Form(props) {
         'Ball':  '',
         'Rumix':  '',
         'Rusical':  '',
+        'Acting':  '',
+        'Advertising':  '',        
+        'Design':  '',
+        'Girl Group':  '',
+        'Roast':  '',
     }
 
-    const [inputs, setInputs] = useState({
-        name: "",
+    const inputs = {
+        name: '',
         places: initialPlaces,
-        challenges: initialChallenges
-    });
-
-    const handleChange = (event) => {
-        const name = event.target.name;
-        let value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
-    }
-
-    const handlePositionChange = (event) => {
-        const name = event.target.name;
-        const index = props.queens.length - parseInt(name.substring('place-'.length));
-        const value = event.target.value;
-        setInputs(prevValues => {
-            const newValue = {
-                name: prevValues.name,
-                challenges: prevValues.challenges,
-                places: prevValues.places
-            };
-            newValue.places[index] = value;
-            return newValue;
-        });
-    }
-
-    const handleChallengeChange = (event) => {
-        const name = event.target.name;
-        let value = event.target.value;
-        setInputs(prevValues => {
-            const newValue = {
-                name: prevValues.name,
-                challenges: prevValues.challenges,
-                places: prevValues.places
-            };
-            newValue.challenges[name] = value;
-            return newValue;
-        });
-    }
+        challenges: initialChallenges,
+        lipsyncs: initialLipsyncAssassins
+    };
 
     const navigate = useNavigate();
 
     function sendForm(event) {        
         event.preventDefault();        
-
+        console.log(inputs);
         const duplicatedQueens = props.queens.filter(queen => inputs.places.indexOf(queen) !== inputs.places.lastIndexOf(queen));
         if (duplicatedQueens.length === 0) {
             const requestOptions = {
@@ -73,7 +49,7 @@ function Form(props) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(inputs)
             };
-            fetch('/forecast', requestOptions)
+            fetch(backendUrl() + '/api/forecast', requestOptions)
                 .then(errorHandler)
                 .then(() => navigate('/thanks'))
                 .catch(() => navigate('/sashay'));
@@ -84,25 +60,33 @@ function Form(props) {
         <section className="first-section form-section">
             <div className="container">
                 <div className="row">
-                    <div className="mb-5">
-                        <h4>Prénom</h4>
-                        <input type="text" className="form-control" id="name" name="name" placeholder="Ton petit prénom" required onChange={handleChange} value={inputs.name}/>
-                    </div>
+                    <Name key={uuidv4()} onUpdate={value => inputs.name = value} />
                 </div>
                 <div className="row">
-                    <div className="col-lg-6">
+                    <div className="col-lg-4">
                         <h2>Filler queens <i className="fas fa-star-half-alt"></i></h2>
-                        { [...Array(props.queens.length - 4)].map((x, i) => <Position key={uuidv4()} index={i} queens={props.queens} onChange={handlePositionChange} value={inputs.places[i]} /> )}
+                        <p className="sub-text">Nombre de points en fonction du classement</p>
+                        { [...Array(props.queens.length - 4)].map((x, i) => <Position key={uuidv4()} index={i} queens={props.queens} onUpdate={value => inputs.places[i] = value} /> )}
                     </div>
-                    <div className="col-lg-6">                        
-                        <h2>Extra points <i className="fas fa-plus"></i></h2>
+                    <div className="col-lg-4">                        
+                        <h2>Challenges <i className="fas fa-trophy"></i></h2>
                         <p className="sub-text">{props.bonusScore + ' points par réponse correcte'}</p>
-                        <Challenge id='Snatch Game' name='Snatch Game' queens={props.queens} value={inputs.challenges['Snatch Game']} onChange={handleChallengeChange}/>
-                        <Challenge id='Talent Show' name='Talent Show' queens={props.queens} value={inputs.challenges['Talent Show']} onChange={handleChallengeChange}/>
-                        <Challenge id='Reading' name='Reading Challenge' queens={props.queens} value={inputs.challenges['Reading']} onChange={handleChallengeChange}/>
-                        <Challenge id='Ball' name='Ball Challenge' queens={props.queens} value={inputs.challenges['Ball']} onChange={handleChallengeChange}/>
-                        <Challenge id='Rumix' name='The Rumix' queens={props.queens} value={inputs.challenges['Rumix']} onChange={handleChallengeChange}/>
-                        <Challenge id='Rusical' name='The Rusical' queens={props.queens} value={inputs.challenges['Rusical']} onChange={handleChallengeChange}/>
+                        <Challenge id='Snatch Game' name='Snatch Game' queens={props.queens} onUpdate={value => inputs.challenges['Snatch Game'] = value}/>
+                        <Challenge id='Talent Show' name='Talent Show' queens={props.queens} onUpdate={value => inputs.challenges['Talent Show'] = value}/>
+                        <Challenge id='Reading' name='Reading Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Reading'] = value}/>
+                        <Challenge id='Ball' name='Ball Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Ball'] = value}/>
+                        <Challenge id='Rumix' name='Rumix Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Rumix']= value}/>
+                        <Challenge id='Rusical' name='Rusical Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Rusical'] = value}/>
+                        <Challenge id='Acting' name='Acting Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Acting'] = value}/>
+                        <Challenge id='Advertising' name='Advertising Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Advertising'] = value}/>
+                        <Challenge id='Design' name='Design Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Design'] = value}/>
+                        <Challenge id='Girl Group' name='Girl Group Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Girl Group'] = value}/>
+                        <Challenge id='Roast' name='Roast Challenge' queens={props.queens} onUpdate={value => inputs.challenges['Roast'] = value}/>                     
+                    </div>
+                    <div className="col-lg-4">
+                        <h2>Lipsync Assassins <i className="fas fa-skull-crossbones"></i></h2>
+                        <p className="sub-text">{props.bonusScore + ' points par réponse correcte'}</p>
+                        { [...Array(5)].map((x, i) => <LipsyncAssassin key={uuidv4()} index={i} onUpdate={value => inputs.lipsyncs[i] = value} /> )}
                     </div>
                 </div>
             </div>
@@ -112,7 +96,7 @@ function Form(props) {
                 <div className="row text-center justify-content-center">
                     <h2>Top 4 <i className="fas fa-star"></i></h2>
                     <p className="sub-text">{props.bonusScore + ' points supplémentaires par queen'}</p>
-                    { [...Array(3)].map((x, i) => <Position key={uuidv4()} index={props.queens.length - 4 + i} queens={props.queens} onChange={handlePositionChange} value={inputs.places[props.queens.length - 4 + i]}/>) }
+                    { [...Array(3)].map((x, i) => <Position key={uuidv4()} index={props.queens.length - 4 + i} queens={props.queens} onUpdate={value => inputs.places[props.queens.length - 4 + i] = value}/>) }
                 </div>
             </div>
         </section>
@@ -120,7 +104,7 @@ function Form(props) {
             <div className="container">
                 <div className="row text-center justify-content-center">
                     <h2>She's a winner, babe! <i className="fas fa-crown"></i></h2>
-                    <Position key={uuidv4()} index={props.queens.length - 1} queens={props.queens} message="And the winner of RuPaul's All Stars 7 is..." onChange={handlePositionChange} value={inputs.places[props.queens.length - 1]}/>
+                    <Position key={uuidv4()} index={props.queens.length - 1} queens={props.queens} message="And the winner of RuPaul's All Stars 7 is..." onUpdate={value => inputs.places[props.queens.length - 1] = value}/>
                 </div>
             </div>
         </section>

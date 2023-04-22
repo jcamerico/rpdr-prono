@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Forecast = require('../models/forecast');
-const limitDate = new Date('2022-11-19');
+const limitDate = new Date('2023-05-11');
 const deadlineErrorMessage = 'Sorry, but the deadline for submitting new forecasts is over! Sashay away!';
 
 router.post('/', function(req, res) {

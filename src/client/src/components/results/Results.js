@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Score from "./Score";
+import backendUrl from "../../backend";
 
 function Results() {
 
     const [scores, setScores] = useState([]);
 
     useEffect(() => {
-        fetch('/results').
+        fetch(backendUrl() + '/api/results').
         then(res => res.json()).
         then(
             (data) => {

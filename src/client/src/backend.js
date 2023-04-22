@@ -1,6 +1,6 @@
 
 function backendUrl() {
-    return process.env.BACKEND_URL;
+    return process.env.REACT_APP_BACKEND_URL || '';
 }
 
 export default backendUrl;
