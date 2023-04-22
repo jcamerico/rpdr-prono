@@ -25,7 +25,7 @@ function Main() {
     return <div>
         <Welcome />
         { queens.length == 0 && <Loading /> }
-        { queens.length > 0 && <Form queens={queens} bonusScore={Math.pow(2, queens.length - 3)}/> }
+        { queens.length > 0 && <Form queens={queens} bonusScore={Math.pow(2, queens.length - 4)}/> }
     </div>;
 }
 

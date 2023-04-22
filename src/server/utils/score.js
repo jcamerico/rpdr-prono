@@ -63,7 +63,7 @@ function computeScore(result, forecast, bonusScore) {
                 found = true;
             }
         });
-        if (!found) {
+        if (!found && queen) {
             answer.push({ message: message, status: 'unknown'} );
         }
     });
@@ -77,9 +77,9 @@ function computeScore(result, forecast, bonusScore) {
             found = true;
             answer.push({ message: message, status: 'correct' });
             score += bonusScore;
-        } else if (winners.length === 0) {
+        } else if ((winners.length === 0) && queen) {
             answer.push({ message: message, status: 'unknown' });
-        } else {
+        } else if (queen) {
             answer.push({ message: message, status: 'incorrect' });
         }        
     });
