@@ -104,7 +104,7 @@ function Form(props) {
             <div className="container">
                 <div className="row text-center justify-content-center">
                     <h2>She's a winner, babe! <i className="fas fa-crown"></i></h2>
-                    <Position key={uuidv4()} index={props.queens.length - 1} queens={props.queens} message="And the winner of RuPaul's All Stars 7 is..." onUpdate={value => inputs.places[props.queens.length - 1] = value}/>
+                    <Position key={uuidv4()} index={props.queens.length - 1} queens={props.queens} message="And the winner of RuPaul's All Stars 8 is..." onUpdate={value => inputs.places[props.queens.length - 1] = value}/>
                 </div>
             </div>
         </section>
